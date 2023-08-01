@@ -4,11 +4,12 @@ import clientPromise from "../../../lib/mongo";
 export async function GET(request) {
     try {
         const client = await clientPromise;
-        const db = client.db("posts");
-
+        const db = client.db("openeasm");
         const posts = await db
-            .collection("posts")
-            .find({})
+            .collection("project")
+            .aggregate([
+                {$project: {"name": 1, "domains_count": {$size: "$domains"}}},
+                {$sort: {"domains_count": -1}}])
             .limit(20)
             .toArray();
         return NextResponse.json({data: posts})
