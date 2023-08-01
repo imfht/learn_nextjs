@@ -20,8 +20,8 @@ export default function RootLayout({
       <html lang="en">
       <body className={inter.className}>
       {Nav()}
-      <main className="flex flex-col items-center ">
-          <div className="">
+      <main className="flex flex-col  grid grid-cols-6 gap-4">
+          <div className="col-start-2 col-span-4">
               {children}
           </div>
       </main>

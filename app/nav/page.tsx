@@ -5,7 +5,7 @@ const Nav = () => {
     return (
         <div className="navbar bg-base-100">
             <div className="flex-1">
-                <a className="btn btn-ghost normal-case text-xl">Open EASM</a>
+                <a className="btn btn-ghost normal-case text-xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">Open EASM</a>
             </div>
             <div className="flex-none gap-2">
                 <div className="form-control">
